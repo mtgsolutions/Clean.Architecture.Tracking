@@ -2,11 +2,12 @@ using Clean.Architecture.Tracking.Application.DependencyInjections;
 using Clean.Architecture.Tracking.Infrastructure.DependencyInjections;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services
     .AddInfrastructure()
-    .AddApplication();
+    .AddApplication(configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

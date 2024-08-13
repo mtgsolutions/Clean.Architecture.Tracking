@@ -39,8 +39,6 @@ public static class DependencyInjecionInfrastructureHelper
             var options = sp.GetService<MongoDbOptions>();
             var mongoClient = new MongoClient(options.ConnectionString);
             var db = mongoClient.GetDatabase(options.DatabaseName);
-            //var dbSeed = new DbSeed(db);
-            //dbSeed.Seed();
             return mongoClient;
         });
 
